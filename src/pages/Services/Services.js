@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet";
 import corde from "../../assets/images/static/corde.jpg";
 import debroussaillage from "../../assets/images/static/debroussaillage.jpeg";
 import abattage from "../../assets/images/static/abattage.jpeg";
-import elagage from "../../assets/images/static/Nettoyage-Palmier-768x1024 (1).jpg";
+import elagage from "../../assets/images/static/Nettoyage_de_palmier.jpg";
 import debroussaillageAvant from "../../assets/images/debroussaillage/Avant_débroussaillage.jpeg";
 import debroussaillageApres from "../../assets/images/debroussaillage/Après_débroussaillage.jpeg";
 import debroussaillageTool from "../../assets/images/debroussaillage/Débroussaillage_avec_machine_thermique_autotractée.jpeg";
