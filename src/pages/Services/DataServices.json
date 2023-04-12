@@ -1,0 +1,129 @@
+[
+  {
+    "id": "abattage",
+    "name": "Abattage",
+    "description": "Intervention en hauteur en fonction de vos besoins",
+    "faq": [
+      {
+        "question": "Dans quel(s) cas, dois-je faire appel à un professionnel pour abattre un arbre",
+        "answer": [
+          "Faire appel à un professionnel qualifié est un gage de sécurité pour vous et les alentours.",
+          "Nous intervenons pour abattre un arbre dès lors :",
+          " - que celui-ci menace de tomber et devient un danger",
+          " - que son enracinement menace les structures avoisinantes",
+          " - qu'il est mort",
+          " - qu'il est nécessaire de libérer de l'espace ou apporter de la luminosité"
+        ]
+      },
+      {
+        "question": "Qu'est-ce qu'un abattage par démontage ?",
+        "answer": [
+          "Lorsque l'environnement est contraignant (câbles EDF/télécom, habitations, clôtures, piscines...), cela nécessite un accès sur corde afin de procéder à une découpe, tronçon par tronçon, en commençant par les charpentières, puis en démontant le fût du haut vers le bas",
+          "Ainsi, parfois, la technique de démontage consiste à mettre en place un système de rétention qui permet de maîtriser et freiner la chute des branches et du tronc."
+        ]
+      },
+      {
+        "question": "Pourquoi rogner la souche après abattage ?",
+        "answer": [
+          "Pour des raisons de sécurité, après l'abttage d'un arbre, il est souvent d'intervenir sur la souche restante au sol.",
+          "En effet, celle-ci peut être gênante et dangereuse dans votre jardin mais aussi dans l'espace public où elle se situe."
+        ]
+      },
+      {
+        "question": "En quoi consiste le rognage de la souche ?",
+        "answer": [
+          "La destruction de la souche de l'arbre après abattage s'effectue à l'aide d'une machine spéciale appelée rogneuse ou raboteuse.",
+          "C'est une solution rapide et efficace, sans danger pour le jardin, les pelouses ou habitations proches.",
+          "Grâce à ce procédé mécanique de grignotage, la rogneuse scie à grande vitesse la souche en la réduisant en copeaux de bois qui pourront ensuite être utilisés comme paillage pour les plantations."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "debroussaillage",
+    "name": "Débroussaillage et entretien",
+    "description": "ceci est un test de débroussaillage",
+    "faq": [
+      {
+        "question": "Pour quelles raisons dois-je faire débroussailler mon espace vert ?",
+        "answer": [
+          "Pour des raisons essentiellement esthétiques afin d'entretenir votre terrain ou votre jardin.",
+          "Pour la prévention des incendies avant l'été, dé-densifier la végétation sauvage à proximité des habitats."
+        ]
+      },
+      {
+        "question": "Existe-t-il des impératifs légaux au débroussaillage ?",
+        "answer": [
+          "Notre région étant particulièrement touchée par les feux de forêt pendant la période estivale, le débroussaillage est le moyen de prévention le plus efficace pour lutter contre le risque d’incendie",
+          "Régi par le code forestier (l’article L131-10) et la réglementation communale, il est obligatoire dans les zones exposées à un risque."
+        ]
+      },
+      {
+        "question": "En quoi consiste le debroussaillage ?",
+        "answer": [
+          " Le débroussaillage protège la forêt en limitant la propagation d’un départ de feu accidentel et permet de mieux sécuriser votre propriété , d’assurer la sécurité de vos proches ainsi que celle des secours afin de faciliter l ‘extinction.",
+          "Il consiste à réduire la masse combustible, les matières végétales de toute nature (herbe, branchage, feuilles…). Il peut s’agir aussi d’élaguer les arbres ou arbustes pouvant prendre feu et propager l’incendie.",
+          "Il est donc important, avant l’été, de veiller à entretenir son terrain, les talus et bordures à proximités des habitations."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "elagage",
+    "name": "Elagage et taille",
+    "description": "ceci est un test de débroussaillage",
+    "faq": [
+      {
+        "question": "Pour quelles raisons dois-je faire débroussailler mon espace vert ?",
+        "answer": [
+          "Pour des raisons essentiellement esthétiques afin d'entretenir votre terrain ou votre jardin.",
+          "Pour la prévention des incendies avant l'été, dé-densifier la végétation sauvage à proximité des habitats."
+        ]
+      },
+      {
+        "question": "Existe-t-il des impératifs légaux au débroussaillage ?",
+        "answer": [
+          "Notre région étant particulièrement touchée par les feux de forêt pendant la période estivale, le débroussaillage est le moyen de prévention le plus efficace pour lutter contre le risque d’incendie",
+          "Régi par le code forestier (l’article L131-10) et la réglementation communale, il est obligatoire dans les zones exposées à un risque."
+        ]
+      },
+      {
+        "question": "En quoi consiste le debroussaillage ?",
+        "answer": [
+          " Le débroussaillage protège la forêt en limitant la propagation d’un départ de feu accidentel et permet de mieux sécuriser votre propriété , d’assurer la sécurité de vos proches ainsi que celle des secours afin de faciliter l ‘extinction.",
+          "Il consiste à réduire la masse combustible, les matières végétales de toute nature (herbe, branchage, feuilles…). Il peut s’agir aussi d’élaguer les arbres ou arbustes pouvant prendre feu et propager l’incendie.",
+          "Il est donc important, avant l’été, de veiller à entretenir son terrain, les talus et bordures à proximités des habitations."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cordiste",
+    "name": "Travaux d'accès difficile",
+    "description": "ceci est un test de débroussaillage",
+    "faq": [
+      {
+        "question": "Pour quelles raisons dois-je faire débroussailler mon espace vert ?",
+        "answer": [
+          "Pour des raisons essentiellement esthétiques afin d'entretenir votre terrain ou votre jardin.",
+          "Pour la prévention des incendies avant l'été, dé-densifier la végétation sauvage à proximité des habitats."
+        ]
+      },
+      {
+        "question": "Existe-t-il des impératifs légaux au débroussaillage ?",
+        "answer": [
+          "Notre région étant particulièrement touchée par les feux de forêt pendant la période estivale, le débroussaillage est le moyen de prévention le plus efficace pour lutter contre le risque d’incendie",
+          "Régi par le code forestier (l’article L131-10) et la réglementation communale, il est obligatoire dans les zones exposées à un risque."
+        ]
+      },
+      {
+        "question": "En quoi consiste le debroussaillage ?",
+        "answer": [
+          " Le débroussaillage protège la forêt en limitant la propagation d’un départ de feu accidentel et permet de mieux sécuriser votre propriété , d’assurer la sécurité de vos proches ainsi que celle des secours afin de faciliter l ‘extinction.",
+          "Il consiste à réduire la masse combustible, les matières végétales de toute nature (herbe, branchage, feuilles…). Il peut s’agir aussi d’élaguer les arbres ou arbustes pouvant prendre feu et propager l’incendie.",
+          "Il est donc important, avant l’été, de veiller à entretenir son terrain, les talus et bordures à proximités des habitations."
+        ]
+      }
+    ]
+  }
+]

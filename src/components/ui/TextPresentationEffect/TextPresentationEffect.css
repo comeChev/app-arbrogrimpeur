@@ -1,0 +1,70 @@
+*,
+:before,
+:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  font-family: sans-serif;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: url("../../../../public/chainsaw.svg"), context-menu;
+}
+
+#inside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+  font-size: 1rem;
+  color: transparent;
+  transition: color 1s ease-in-out;
+}
+
+.container div {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  display: block;
+  text-align: center;
+}
+
+.upper {
+  top: 25%;
+  height: 100%;
+  background: linear-gradient(180deg, #ca8a04 50%, transparent 50%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  z-index: 3;
+  transition: top 1s ease-in-out;
+}
+
+.lower {
+  bottom: 25%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 50%, #ca8a04 50%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  z-index: 1;
+  transition: bottom 1s ease-in-out;
+}
+
+.container:hover .upper {
+  top: 0px;
+  transition: top ease-in-out 1.5s;
+}
+
+.container:hover .lower {
+  bottom: 0px;
+  transition: bottom ease-in-out 1.5s;
+}
+.container:hover #inside {
+  color: #166534;
+  transition: color ease-in-out 1.5s;
+}
