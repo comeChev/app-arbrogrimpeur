@@ -20,19 +20,21 @@ import IconCheck from "../components/ui/icons/IconCheck";
 import IconSafe from "../components/ui/icons/IconSafe";
 import IconEcology from "../components/ui/icons/IconEcology";
 import IconThumbUp from "../components/ui/icons/IconThumbUp";
+import IconArrowDown from "../components/ui/icons/IconArrowDown";
+import MainTitle from "../components/ui/titles/MainTitle";
+import SecondaryTitle from "../components/ui/titles/SecondaryTitle";
+import Container from "../components/ui/Container";
 
 const CardService = ({ service }) => (
-  <li className="flex flex-col mb-4">
+  <li className="flex flex-col mb-12">
     <img
       src={service.img}
       className="w-full max-h-48 lg:max-h-96 object-cover rounded-md"
       alt={service.altImg}
     />
     <div className="flex flex-col mx-2 items-start justify-between">
-      <p className="text-md font-medium leading-6 text-black uppercase py-2">
-        {service.title}
-      </p>
-      <div className="text-gray-400 text-sm">
+      <p className="uppercase font-bold tracking-tight my-3">{service.title}</p>
+      <div className="text-gray-500 text-sm">
         {service.description.map((sentence, index) => (
           <p key={index} className="mb-3">
             {sentence}
@@ -53,6 +55,24 @@ const CardService = ({ service }) => (
     </div>
     <div></div>
   </li>
+);
+const CardPrincipes = ({ img, altImg, title, children, icon }) => (
+  <div className="group flex flex-col items-start justify-start w-full sm:w-4/5 sm:mx-auto lg:w-1/3 h-full  md:px-2 py-2 lg:py-0 mx-2 md:my-0 hover:scale-105 transition duration-500">
+    <div className="h-full mb-2">
+      <img
+        src={img}
+        alt={altImg}
+        className="h-48 w-full object-cover object-center rounded-md"
+      />
+      <div className="px-2">
+        <div className="flex items-center py-2 pb-4">
+          {icon}
+          <span className="uppercase font-bold tracking-tight">{title}</span>
+        </div>
+        <p className="text-gray-500 text-sm">{children}</p>
+      </div>
+    </div>
+  </div>
 );
 
 const Home = () => {
@@ -109,12 +129,19 @@ const Home = () => {
             alt="Arbr'O Grimpeur taille et élagage"
           />
           <div className="absolute top-0 w-full h-full text-teal-50">
-            <div className="absolute bottom-4 w-full">
+            <div className="absolute bottom-0 w-full">
+              <div className="w-full sm:w-2/3 mx-auto">
+                <IconArrowDown css="w-12 h-12 animate-bounce mx-auto text-green-800" />
+              </div>
+            </div>
+          </div>
+          <div className="absolute top-0 w-full h-full text-teal-50">
+            <div className="absolute bottom-16 w-full">
               <div className="opacity-0 w-full sm:opacity-100 sm:w-2/3 mx-auto flex items-end justify-between p-4 bg-neutral-950/80 sm:bg-neutral-950/80 hover:opacity-100 rounded-lg shadow-md">
                 <div className="flex flex-col items-start justify-center sm:w-2/3">
-                  <h1 className="text-lg lg:text-4xl uppercase font-bold p-1">
+                  <h2 className="text-lg lg:text-4xl uppercase font-bold p-1">
                     Elageur, grimpeur, cordiste
-                  </h1>
+                  </h2>
                   <h2 className="text-md lg:text-3xl p-1">
                     Certifié et qualifié
                   </h2>
@@ -135,24 +162,25 @@ const Home = () => {
           </div>
         </div>
         {/* PRESENTATION */}
-        <section className="bg-teal-50 w-4/5 mx-auto rounded-lg my-16 py-4">
+
+        <Container css="bg-white">
           <div className="mx-auto max-w-7xl lg:flex px-8">
             <div className="relative lg:w-1/2">
               <div className="top-0 pt-16 pb-16 lg:sticky">
                 <div>
                   <div className="lg:pr-24 md:pr-12">
                     <div>
-                      <p className="text-2xl font-medium tracking-tight text-black sm:text-4xl">
+                      <MainTitle>
                         Arbr'0 Grimpeur est à votre disposition que vous soyez
                         un particulier, une entreprise ou bien encore une
                         collectivité
-                      </p>
-                      <p className="max-w-xl mt-4 text-lg tracking-tight text-gray-600">
+                      </MainTitle>
+                      <SecondaryTitle>
                         Interventions sur zones : Montpellier, Montpellier Nord,
                         Communauté de communes du Grand Pic St Loup, Communauté
                         de communes des Cévennes Gangeoises et Suménoises,
                         Hérault et Gard.
-                      </p>
+                      </SecondaryTitle>
                     </div>
                   </div>
                 </div>
@@ -168,27 +196,36 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </section>
+        </Container>
 
         <ContactButton />
 
-        <section className="bg-teal-50 w-4/5 mx-auto rounded-lg p-4 flex my-16 flex-col sm:flex-row">
-          <div className="h-full  w-full mr-10">
+        <Container css="bg-white">
+          <div className="mx-auto max-w-7xl px-8">
+            <div>
+              <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-green-900">
+                Arbr'O Grimpeur ? Quésaco ?
+              </h2>
+              <hr className="w-48 h-1 my-4 bg-green-800 border-0 rounded" />
+            </div>
+
             <div className="flex flex-col md:flex-row py-4 px-2">
               <div className="flex flex-col justify-between py-4">
-                <h3 className="px-4 text-lg tracking-tight text-gray-600 py-4">
-                  Fondée en 2019, à l'initiative de Jérémie Prades, l'entreprise
-                  Arbr'O Grimpeur a commencé son activité de <em>taille</em>,
-                  <em> abattage</em> et <em>élagage</em> sur le secteur
-                  Cazevieille, le Pic Saint Loup et Montpellier.
-                </h3>
-                <h3 className="px-4 text-lg tracking-tight text-gray-600 py-4 ">
-                  Arbr'O Grimpeur est désormais domicilié à Laroque sur la
-                  Communauté de communes des Cévennes Gangeoise et Sumènoise et
-                  continue son activité sur de nombreux secteurs dans l'Hérault
-                  et le Gard.
-                </h3>
-                <div className="flex justify-end mt-4">
+                <div>
+                  <h3 className="px-4 text-lg tracking-tight text-gray-600 py-4">
+                    Fondée en 2019, à l'initiative de Jérémie Prades,
+                    l'entreprise Arbr'O Grimpeur a commencé son activité de{" "}
+                    <em>taille</em>,<em> abattage</em> et <em>élagage</em> sur
+                    le secteur Cazevieille, le Pic Saint Loup et Montpellier.
+                  </h3>
+                  <h3 className="px-4 text-lg tracking-tight text-gray-600 py-4 ">
+                    Arbr'O Grimpeur est désormais domicilié à Laroque sur la
+                    Communauté de communes des Cévennes Gangeoise et Sumènoise
+                    et continue son activité sur de nombreux secteurs dans
+                    l'Hérault et le Gard.
+                  </h3>
+                </div>
+                <div className="flex justify-end">
                   <Link
                     to="/about"
                     className="uppercase inline-flex items-center justify-start text-sm font-semibold text-blue-500 duration-200 hover:underline hover:underline-offset-4 hover:underline-green-800 mt-4"
@@ -207,14 +244,16 @@ const Home = () => {
               />
             </div>
           </div>
-        </section>
+        </Container>
 
-        <section className="bg-teal-50 w-4/5 mx-auto rounded-lg p-4 mt-16 mb-32">
-          <h2 className="text-4xl py-6 px-4">
+        <Container css="bg-white">
+          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-green-900">
             Pourquoi choisir Arbr'O Grimpeur pour vos travaux ?
           </h2>
-          <div className="flex flex-col md:flex-row">
-            <div className="bg-green-800 text-white md:w-76 py-5 px-8 flex flex-col items-start rounded-md justify-center md:justify-around">
+          <hr className="w-48 h-1 my-4 bg-green-800 border-0 rounded" />
+
+          <div className="flex flex-col mt-10">
+            <div className="bg-green-800 text-white md:w-76 py-5 px-8 flex flex-col items-start lg:rounded-md justify-center mb-5 max-w-3xl mx-auto lg:shadow-xl shadow-neutral-300">
               <div>
                 <h3 className="text-2xl font-medium py-3">
                   Un professionel engagé
@@ -246,67 +285,48 @@ const Home = () => {
               <div className="flex flex-row w-full items-center justify-end">
                 <Link
                   to="/about"
-                  className="bg-white text-green-800 font-semibold px-4 py-2 rounded-md"
+                  className="bg-white text-green-800 font-semibold px-4 py-2 rounded-md hover:scale-105 transition duration-300"
                 >
                   En savoir plus →
                 </Link>
               </div>
             </div>
-            <div className="flex flex-col lg:flex-row py-4">
-              <div className="flex flex-col items-start justify-start w-full lg:w-1/3 h-full px-4 md:px-2 py-2 lg:py-0 mx-2 md:my-0">
-                <div className="h-full mb-2">
-                  <img
-                    src={security}
-                    alt="Sécurité pendant le démontage"
-                    className="h-48 w-full object-cover object-center rounded-md"
-                  />
-                  <div className="px-2">
-                    <div className="flex items-center py-2 pb-4">
-                      <IconSafe css="h-10 w-10 me-2 text-green-700" />
-                      <span className="uppercase">Sécurité</span>
-                    </div>
-                    <p>
-                      Nous appliquons dans nos interventions toutes les
-                      techniques de sécurité, d’hygiène et de propreté adaptées
-                      au milieu naturel.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col items-start justify-start w-full lg:w-1/3 h-full px-4 md:px-2 py-2 lg:py-0 mx-2">
-                <img
-                  src={ecoResponsability}
-                  alt="Démarche éco-responsable"
-                  className="h-48 w-full object-cover object-center rounded-md"
-                />
-                <div className="flex items-center py-2">
-                  <IconEcology css="h-10 w-10 me-2 text-green-700" />
-                  <span className="uppercase">Démarche eco-responsable</span>
-                </div>
-                <p>
-                  Nous appliquons dans nos interventions toutes les techniques
-                  de sécurité, d’hygiène et de propreté adaptées au milieu
-                  naturel
-                </p>
-              </div>
-              <div className="flex flex-col items-start justify-start w-full lg:w-1/3 h-full px-4 md:px-2 py-2 lg:py-0 mx-2">
-                <img
-                  src={satisfaction}
-                  alt="Satisfaction client"
-                  className="h-48 w-full object-cover object-center rounded-md"
-                />
-                <div className="flex items-center py-2">
-                  <IconThumbUp css="h-10 w-10 me-2 text-green-700" />
-                  <span className="uppercase">Satisfaction client</span>
-                </div>
-                <p>
-                  Le respect des engagements pris auprès de nos clients,
-                  notamment en terme de délais et de qualité, est une priorité.
-                </p>
-              </div>
+
+            <div className="flex flex-col md:flex-row py-4">
+              <CardPrincipes
+                img={security}
+                altImg="Sécurité pendant le démontage"
+                title="Sécurité"
+                icon={<IconSafe css="h-10 w-10 me-2 text-green-700" />}
+              >
+                Nous respectons strictement toutes les mesures de sécurité à la
+                fois pour nos équipiers mais également pour protéger les tierces
+                personnes et les alentours. La sécurité fait partie intégrante
+                de savoir-faire.
+              </CardPrincipes>
+
+              <CardPrincipes
+                img={ecoResponsability}
+                altImg="Démarche éco-responsable"
+                title="Démarche éco-responsable"
+                icon={<IconEcology css="h-10 w-10 me-2 text-green-700" />}
+              >
+                Nous appliquons dans nos interventions toutes les techniques de
+                sécurité, d’hygiène et de propreté adaptées au milieu naturel.
+              </CardPrincipes>
+
+              <CardPrincipes
+                img={satisfaction}
+                altImg="Satisfaction client"
+                title="Satisfaction client"
+                icon={<IconThumbUp css="h-10 w-10 me-2 text-green-700" />}
+              >
+                Le respect des engagements pris auprès de nos clients, notamment
+                en terme de délais et de qualité, est une priorité.
+              </CardPrincipes>
             </div>
           </div>
-        </section>
+        </Container>
       </div>
     </>
   );

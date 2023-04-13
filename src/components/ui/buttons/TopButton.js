@@ -11,7 +11,7 @@ const TopButton = () => {
     scroll > 10 && (
       <button
         type="button"
-        class="fixed p-3 bg-green-800  border-2 border-green-800 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-white hover:text-green-800 hover:shadow-lg active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out bottom-5 right-5"
+        class="fixed p-3 bg-teal-800  border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-white hover:border-teal-800 hover:text-teal-800 hover:shadow-lg active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out bottom-10 right-10"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         aria-label="Retour en haut"
       >

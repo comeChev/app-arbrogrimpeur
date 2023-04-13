@@ -7,9 +7,10 @@ const SliderBeforeAfter = ({
   image2,
   text,
   description,
-  imgModal,
-  textModal,
-  altModal,
+  imgModal = "",
+  textModal = "",
+  altModal = "",
+  isValidDesc,
 }) => {
   const [valueInput, setValueInput] = useState(50);
   const [showImage, setShowImage] = useState(false);
@@ -18,12 +19,14 @@ const SliderBeforeAfter = ({
     <>
       <div className="w-[80%] mx-auto my-8">
         <h3 className="text-center pt-4 text-lg sm:text-2xl">{text}</h3>
-        <p
-          className="text-center mb-4 cursor-pointer hover:underline underline-offset-4"
-          onClick={() => setShowImage(true)}
-        >
-          {description}
-        </p>
+        {isValidDesc ? (
+          <p
+            className="text-center mb-4 cursor-pointer hover:underline underline-offset-4"
+            onClick={() => setShowImage(true)}
+          >
+            {description}
+          </p>
+        ) : null}
         <div className="hidden m-auto lg:flex lg:items-center lg:justify-center text-center lg:p-2 lg:mb-4">
           <button
             type="button"
@@ -81,14 +84,16 @@ const SliderBeforeAfter = ({
             }}
           ></div>
         </div>
-        {showImage && (
-          <ModalImage
-            img={imgModal}
-            text={textModal}
-            alt={altModal}
-            setIsOpen={setShowImage}
-          />
-        )}
+        {isValidDesc ? (
+          showImage ? (
+            <ModalImage
+              img={imgModal}
+              text={textModal}
+              alt={altModal}
+              setIsOpen={setShowImage}
+            />
+          ) : null
+        ) : null}
       </div>
     </>
   );

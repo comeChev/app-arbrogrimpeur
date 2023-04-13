@@ -188,7 +188,7 @@ const Footer = () => {
             {/* SERVICES */}
             <div className="mb-8 sm:me-8">
               <p className="font-medium text-gray-900">Nos services</p>
-              <hr className="w-12 h-1 my-1 bg-green-800 border-0 rounded" />{" "}
+              <hr className="w-12 h-1 my-1 bg-green-800 border-0 rounded" />
               <nav
                 aria-label="Pied de page Navigation - Services"
                 className="mt-6"
