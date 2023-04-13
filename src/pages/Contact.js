@@ -25,6 +25,7 @@ const Contact = () => {
   };
   const [formContact, setFormContact] = useState(formDefault);
   const [isSentMail, setIsSentMail] = useState(null);
+  const [isPendingMail, setIsPendingMail] = useState(false);
 
   const handleInput = (e) => {
     setFormContact({
@@ -37,6 +38,7 @@ const Contact = () => {
     e.preventDefault();
     if (formContact.phone === "")
       setFormContact({ ...formContact, phone: "Non communiqué" });
+    setIsPendingMail(true);
 
     emailjs
       .send(
@@ -48,11 +50,13 @@ const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
+          setIsPendingMail(false);
           setIsSentMail(true);
           setFormContact(formDefault);
         },
         (error) => {
           console.log(error.text);
+          setIsPendingMail(false);
           setIsSentMail(false);
         }
       );
@@ -76,112 +80,123 @@ const Contact = () => {
               un message !
             </SecondaryTitle>
 
-            <form onSubmit={handleSubmitForm} className="space-y-8">
-              {/* EMAIL */}
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+            <form onSubmit={handleSubmitForm} className={`space-y-8 relative`}>
+              <div className={`${isPendingMail ? "opacity-20" : ""}`}>
+                {/* EMAIL */}
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                  >
+                    Votre email
+                  </label>
+                  <input
+                    onChange={handleInput}
+                    value={formContact.email}
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                    placeholder="votre_mail@exemple.com"
+                    required
+                    disabled={isPendingMail}
+                  />
+                </div>
+                {/* LASTNAME */}
+                <div>
+                  <label
+                    htmlFor="lastName"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                  >
+                    Votre nom
+                  </label>
+                  <input
+                    onChange={handleInput}
+                    value={formContact.lastName}
+                    type="text"
+                    name="lastName"
+                    id="lastName"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                    placeholder="Votre nom"
+                    required
+                    disabled={isPendingMail}
+                  />
+                </div>
+                {/* FIRSTNAME */}
+                <div>
+                  <label
+                    htmlFor="firstName"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                  >
+                    Votre prénom
+                  </label>
+                  <input
+                    onChange={handleInput}
+                    value={formContact.firstName}
+                    type="text"
+                    name="firstName"
+                    id="firstName"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                    placeholder="Votre prénom"
+                    required
+                    disabled={isPendingMail}
+                  />
+                </div>
+                {/* PHONE */}
+                <div>
+                  <label
+                    htmlFor="firstName"
+                    className="mb-2 text-sm font-medium text-gray-900 dark:text-gray-300 flex items-center"
+                  >
+                    Votre téléphone
+                    <span className="text-neutral-400 ps-2">- Optionnel</span>
+                  </label>
+                  <input
+                    onChange={handleInput}
+                    value={formContact.phone}
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                    placeholder="06 77 88 99 00"
+                    disabled={isPendingMail}
+                  />
+                </div>
+                {/* MESSAGE */}
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="flex justify-between mb-2 text-sm font-medium text-gray-900"
+                  >
+                    Votre message
+                  </label>
+                  <textarea
+                    onChange={handleInput}
+                    value={formContact.message}
+                    rows="5"
+                    autoCorrect="on"
+                    name="message"
+                    id="message"
+                    className="resize-none shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                    placeholder="Inscrivez votre message ici"
+                    required
+                    disabled={isPendingMail}
+                  />
+                </div>
+                {/* SUBMIT BUTTON */}
+                <button
+                  type="submit"
+                  className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-green-800 hover:bg-green-900"
+                  disabled={isPendingMail}
                 >
-                  Votre email
-                </label>
-                <input
-                  onChange={handleInput}
-                  value={formContact.email}
-                  type="email"
-                  name="email"
-                  id="email"
-                  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                  placeholder="votre_mail@exemple.com"
-                  required
-                />
+                  Envoyer votre message
+                </button>
               </div>
-              {/* LASTNAME */}
-              <div>
-                <label
-                  htmlFor="lastName"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >
-                  Votre nom
-                </label>
-                <input
-                  onChange={handleInput}
-                  value={formContact.lastName}
-                  type="text"
-                  name="lastName"
-                  id="lastName"
-                  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                  placeholder="Votre nom"
-                  required
-                />
-              </div>
-              {/* FIRSTNAME */}
-              <div>
-                <label
-                  htmlFor="firstName"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >
-                  Votre prénom
-                </label>
-                <input
-                  onChange={handleInput}
-                  value={formContact.firstName}
-                  type="text"
-                  name="firstName"
-                  id="firstName"
-                  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                  placeholder="Votre prénom"
-                  required
-                />
-              </div>
-              {/* PHONE */}
-              <div>
-                <label
-                  htmlFor="firstName"
-                  className="mb-2 text-sm font-medium text-gray-900 dark:text-gray-300 flex items-center"
-                >
-                  Votre téléphone
-                  <span className="text-neutral-400 ps-2">- Optionnel</span>
-                </label>
-                <input
-                  onChange={handleInput}
-                  value={formContact.phone}
-                  type="tel"
-                  pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$
-                "
-                  name="phone"
-                  id="phone"
-                  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                  placeholder="06 77 88 99 00"
-                />
-              </div>
-              {/* MESSAGE */}
-              <div>
-                <label
-                  htmlFor="message"
-                  className="flex justify-between mb-2 text-sm font-medium text-gray-900"
-                >
-                  Votre message
-                </label>
-                <textarea
-                  onChange={handleInput}
-                  value={formContact.message}
-                  rows="5"
-                  autoCorrect="on"
-                  name="message"
-                  id="message"
-                  className="resize-none shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                  placeholder="Inscrivez votre message ici"
-                  required
-                />
-              </div>
-              {/* SUBMIT BUTTON */}
-              <button
-                type="submit"
-                className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-green-800 hover:bg-green-900"
-              >
-                Envoyer votre message
-              </button>
+              {isPendingMail ? (
+                <div className="absolute -translate-x-1/2 -translate-y-1/2 top-2/4 left-1/2">
+                  <IconRetry css="w-20 h-20 mr-2 animate-spin text-green-800" />
+                </div>
+              ) : null}
             </form>
           </div>
         ) : null}
