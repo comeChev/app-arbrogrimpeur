@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 //images
-import mainImage from "../assets/images/static/MainImage.jpg";
-import elagage from "../assets/images/static/Elagage.jpg";
-import debroussaillage from "../assets/images//static/Démontage_de_cèdre.jpeg";
-import abattage from "../assets/images/static/Abattage.jpeg";
-import profile from "../assets/images/static/Démontage_de_cèdre.jpeg";
-import security from "../assets/images/static/Démontage-de-charpentiere-avec-rétention.jpg";
+import mainImage from "../assets/images/static/Escalade.webp";
+import elagage from "../assets/images/static/elagage.webp";
+import debroussaillage from "../assets/images/static/Démontage_de_cèdre.webp";
+import abattage from "../assets/images/static/abattage.webp";
+import profile from "../assets/images/static/profile.webp";
+import security from "../assets/images/static/Demontage-de-charpentiere-avec-retention.webp";
 import ecoResponsability from "../assets/images/static/Eco_responsability.jpg";
 import satisfaction from "../assets/images/static/Satisfaction-client.jpg";
 //components

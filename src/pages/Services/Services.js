@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 //images
-import corde from "../../assets/images/static/Corde.jpg";
-import debroussaillage from "../../assets/images/static/Debroussaillage.jpeg";
-import abattage from "../../assets/images/static/Abattage.jpeg";
-import elagage from "../../assets/images/static/Nettoyage_de_palmier.jpg";
+import corde from "../../assets/images/static/corde.webp";
+import debroussaillage from "../../assets/images/static/Débroussaillage.webp";
+import abattage from "../../assets/images/static/abattage.webp";
+import elagage from "../../assets/images/static/Nettoyage_de_palmier.webp";
 import debroussaillageAvant from "../../assets/images/debroussaillage/Avant_débroussaillage.jpeg";
 import debroussaillageApres from "../../assets/images/debroussaillage/Après_débroussaillage.jpeg";
 import debroussaillageTool from "../../assets/images/debroussaillage/Débroussaillage_avec_machine_thermique_autotractée.jpeg";
-import elagageBefore from "../../assets/images/static/Avant_nettoyage_pin.jpg";
-import elagageAfter from "../../assets/images/static/Après_nettoyage_pin.jpg";
+import elagageBefore from "../../assets/images/static/Avant_nettoyage_pin.webp";
+import elagageAfter from "../../assets/images/static/Après_nettoyage_pin.webp";
 //components
 import TitleDivider from "../../components/ui/titles/TitleDivider";
 import QuestionFAQ from "./QuestionFAQ";
