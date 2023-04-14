@@ -1,15 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
 //images
-import mainImage from "../assets/images/static/main-image.jpg";
-import elagage from "../assets/images/static/elagage.jpg";
-import debroussaillage from "../assets/images//static/debroussaillage.jpeg";
-import abattage from "../assets/images/static/abattage.jpeg";
+import mainImage from "../assets/images/static/Main-image.jpg";
+import elagage from "../assets/images/static/Elagage.jpg";
+import debroussaillage from "../assets/images//static/Démontage_de_cèdre.jpeg";
+import abattage from "../assets/images/static/Abattage.jpeg";
 import profile from "../assets/images/static/Démontage_de_cèdre.jpeg";
-import security from "../assets/images/static/Demontage-de-charpentiere-avec-retention-1536x1020.jpg";
-import ecoResponsability from "../assets/images/static/eco_responsability.jpg";
-import satisfaction from "../assets/images/static/Satisfaction-client-002-1024x676.jpg";
+import security from "../assets/images/static/Démontage-de-charpentiere-avec-rétention.jpg";
+import ecoResponsability from "../assets/images/static/Eco_responsability.jpg";
+import satisfaction from "../assets/images/static/Satisfaction-client.jpg";
 //components
 import ContactButton from "../components/ui/buttons/ContactButton";
 import IconTree from "../components/ui/icons/IconTree";
@@ -113,13 +112,6 @@ const Home = () => {
 
   return (
     <>
-      <Helmet>
-        <title>
-          Arbr'O Grimpeur - Elagage, débroussaillage et abattage en Hérault et
-          dans le Gard
-        </title>
-      </Helmet>
-
       <div className="w-full bg-gradient-to-r from-green-100 via-emerald-600 to-teal-800 pb-4">
         {/* MAIN IMAGE */}
         <div className="relative">

@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 //images
-import abattage1 from "../assets/images/static/abattage.jpeg";
-import abattage2 from "../assets/images/static/Demontage-de-charpentiere-avec-retention-1536x1020.jpg";
+import abattage1 from "../assets/images/static/Abattage.jpeg";
+import abattage2 from "../assets/images/static/Démontage-de-charpentiere-avec-rétention.jpg";
 import cordiste from "../assets/images/static/Nettoyage-eolienne.jpg";
-import debroussaillage from "../assets/images/static/debroussaillage.jpeg";
-import profile from "../assets/images/static/profile.jpg";
-
+import debroussaillage from "../assets/images/static/Debroussaillage.jpeg";
+import profile from "../assets/images/static/Profile.jpg";
 //components
 import ContactButton from "../components/ui/buttons/ContactButton";
 import IconChainsaw from "../components/ui/icons/IconChainsaw";

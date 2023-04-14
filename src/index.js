@@ -10,9 +10,10 @@ import Navbar from "./components/navigation/Navbar";
 import Footer from "./components/navigation/Footer";
 import Services from "./pages/Services/Services";
 import TopButton from "./components/ui/buttons/TopButton";
-import Contact from "./pages/Contact";
+import Contact from "./pages/Contact/Contact";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>

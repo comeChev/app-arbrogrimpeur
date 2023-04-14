@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Helmet } from "react-helmet";
+
 //images
-import corde from "../../assets/images/static/corde.jpg";
-import debroussaillage from "../../assets/images/static/debroussaillage.jpeg";
-import abattage from "../../assets/images/static/abattage.jpeg";
+import corde from "../../assets/images/static/Corde.jpg";
+import debroussaillage from "../../assets/images/static/Debroussaillage.jpeg";
+import abattage from "../../assets/images/static/Abattage.jpeg";
 import elagage from "../../assets/images/static/Nettoyage_de_palmier.jpg";
 import debroussaillageAvant from "../../assets/images/debroussaillage/Avant_débroussaillage.jpeg";
 import debroussaillageApres from "../../assets/images/debroussaillage/Après_débroussaillage.jpeg";
@@ -131,17 +131,9 @@ const Services = () => {
   useEffect(() => {
     setService(searchService(nameService));
   }, [nameService]);
-  // HELMET FOR UPDATING META TAGS & TITLE
+
   return (
     <>
-      <Helmet>
-        <title>Arbr'O Grimpeur - Nos Services</title>
-        <meta
-          name="description"
-          content="Arbr'O Grimpeur - Découvrez nos services : de l'élagage à l'abattage d'arbre en passant par l'entretien de vos espaces verts ou encore des travaux à accès diffile dans l'Hérault et le Gard, secteurs Ganges, Montpellier, Pic Saint Loup."
-        />
-      </Helmet>
-
       {/* <Quote css="block lg:hidden text-white bg-gradient-to-r  from-green-100 via-emerald-600 to-teal-800" /> */}
 
       <Container>
