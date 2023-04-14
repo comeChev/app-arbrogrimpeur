@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 //images
-import mainImage from "../assets/images/static/Main-image.jpg";
+import mainImage from "../assets/images/static/MainImage.jpg";
 import elagage from "../assets/images/static/Elagage.jpg";
 import debroussaillage from "../assets/images//static/Démontage_de_cèdre.jpeg";
 import abattage from "../assets/images/static/Abattage.jpeg";
