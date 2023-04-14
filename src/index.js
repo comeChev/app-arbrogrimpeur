@@ -5,7 +5,7 @@ import "./index.css";
 
 import Home from "./pages/Home";
 import StickyNavbar from "./components/navigation/StickyNavbar";
-import About from "./pages/About";
+import About from "./pages/About/About";
 import Navbar from "./components/navigation/Navbar";
 import Footer from "./components/navigation/Footer";
 import Services from "./pages/Services/Services";

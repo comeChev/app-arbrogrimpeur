@@ -20,10 +20,10 @@ import IconTree from "../../components/ui/icons/IconTree";
 import IconRope from "../../components/ui/icons/IconRope";
 import Gallery from "../../components/ui/Gallery";
 import SliderBeforeAfter from "../../components/ui/SliderBeforeAfter/SliderBeforeAfter";
-//data
-import services from "./DataServices.json";
 import Container from "../../components/ui/Container";
 import MainTitle from "../../components/ui/titles/MainTitle";
+//data
+import services from "./data.json";
 
 function importAll(imagesFolder) {
   let images = [];

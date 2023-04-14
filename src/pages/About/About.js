@@ -1,47 +1,37 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useRef, useState } from "react";
 //images
-import abattage1 from "../assets/images/static/Abattage.jpeg";
-import abattage2 from "../assets/images/static/Démontage-de-charpentiere-avec-rétention.jpg";
-import cordiste from "../assets/images/static/Nettoyage-eolienne.jpg";
-import debroussaillage from "../assets/images/static/Debroussaillage.jpeg";
-import profile from "../assets/images/static/Profile.jpg";
+import abattage1 from "../../assets/images/static/Abattage.jpeg";
+import abattage2 from "../../assets/images/static/Démontage-de-charpentiere-avec-rétention.jpg";
+import cordiste from "../../assets/images/static/Nettoyage-eolienne.jpg";
+import debroussaillage from "../../assets/images/static/Debroussaillage.jpeg";
+import profile from "../../assets/images/static/Profile.jpg";
 //components
-import ContactButton from "../components/ui/buttons/ContactButton";
-import IconChainsaw from "../components/ui/icons/IconChainsaw";
-import IconScissors from "../components/ui/icons/IconScissors";
-import IconTree from "../components/ui/icons/IconTree";
-import IconRope from "../components/ui/icons/IconRope";
-import Container from "../components/ui/Container";
-import MainTitle from "../components/ui/titles/MainTitle";
-import SecondaryTitle from "../components/ui/titles/SecondaryTitle";
-
-const ImageAbout = ({ img, text, alt }) => (
-  <>
-    <img
-      src={img}
-      className="rounded-lg shadow-md h-full object-cover"
-      alt={alt}
-    />
-    <span className="absolute left-2 bottom-2 text-white px-3 py-2 bg-green-800/80 rounded-md m-2">
-      {text}
-    </span>
-  </>
-);
-
-const ButtonWithIcon = ({ icon, text, to }) => (
-  <button className="w-3/4 md:w-auto">
-    <Link
-      to={to}
-      className="flex items-center justify-start p-2 xl:px-4 mx-2 my-1 rounded-lg font-semibold bg-teal-800 text-white hover:text-teal-600 hover:bg-white  border-2 border-teal-800"
-    >
-      {icon}
-      <span>{text}</span>
-    </Link>
-  </button>
-);
+import ContactButton from "../../components/ui/buttons/ContactButton";
+import IconChainsaw from "../../components/ui/icons/IconChainsaw";
+import IconScissors from "../../components/ui/icons/IconScissors";
+import IconTree from "../../components/ui/icons/IconTree";
+import IconRope from "../../components/ui/icons/IconRope";
+import Container from "../../components/ui/Container";
+import MainTitle from "../../components/ui/titles/MainTitle";
+import SecondaryTitle from "../../components/ui/titles/SecondaryTitle";
+import ImageAbout from "./ImageAbout";
+import TitleWithDivider from "../../components/ui/titles/TitleWithDivider";
+import CardWithHover from "./CardWithHover";
 
 const About = () => {
+  const [textService, setTextService] = useState(null);
+  const textIconRef = useRef();
+
+  const handleOnMouseOver = (e) => {
+    let text = e.currentTarget.firstChild.children[1].firstChild.innerText;
+    if (text !== null) setTextService(text);
+    textIconRef.current.classList.add("opacity-100");
+  };
+  const handleOnMouseOut = () => {
+    textIconRef.current.classList.remove("opacity-100");
+    setTextService(null);
+  };
+
   return (
     <>
       <Container>
@@ -79,42 +69,54 @@ const About = () => {
       <Container>
         {/* SERVICES  */}
         <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-xl">
-          <h3 className="text-3xl font-semibold mt-8">
-            Les services que nous proposons
-          </h3>
-          <hr className="w-24 h-1 my-1 bg-green-800 border-0 rounded" />
+          <TitleWithDivider text="Les services que nous proposons" />
           <div className="flex flex-col md:flex-row flex-wrap">
-            <ButtonWithIcon
+            <CardWithHover
               text="Abattage"
               icon={<IconChainsaw css="w-10 h-10 mx-2" />}
               to="abattage"
+              onMouseOver={handleOnMouseOver}
+              onMouseOut={handleOnMouseOut}
+              content="Abattage par démontage ou abattage en direct lorsque nécessaire. Le tout en toute sécurité."
             />
-            <ButtonWithIcon
+            <CardWithHover
               text="Elagage et taille"
               icon={<IconTree css="w-10 h-10 mx-2" />}
               to="/services/elagage"
+              onMouseOver={handleOnMouseOver}
+              onMouseOut={handleOnMouseOut}
+              content="La taille d’un arbre nécessite le savoir faire de professionnels et de matériels adaptés à la grimpe."
             />
-            <ButtonWithIcon
+            <CardWithHover
               text="Débroussaillage et entretien"
               icon={<IconScissors css="w-10 h-10 mx-2" />}
               to="/services/debroussaillage"
+              onMouseOver={handleOnMouseOver}
+              onMouseOut={handleOnMouseOut}
+              content="Débroussaillage manuel ou avec Rotofil pour vos espaces verts et une prévention incendie assurée."
             />
-            <ButtonWithIcon
+            <CardWithHover
               text="Travaux d'accès difficile"
               icon={<IconRope css="w-10 h-10 mx-2" />}
               to="/services/cordiste"
+              onMouseOver={handleOnMouseOver}
+              onMouseOut={handleOnMouseOut}
+              content="Faire appel un à professionnel pour tous vos travaux d'accès difficile
+              est un gage de sécurité dans l'exécution de vos chantiers."
             />
+          </div>
+          <div
+            ref={textIconRef}
+            className="shadow-md shadow-slate-300 sm:w-2/5 mx-2 opacity-0 rounded-lg bg-teal-800/80 mt-5 duration-300 transition text-white"
+          >
+            <p className="px-4 py-2 ">{textService}</p>
           </div>
         </div>
       </Container>
 
       <Container>
         <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-xl">
-          <h3 className="text-3xl font-semibold mt-8">
-            Arbr'O Grimpeur en action
-          </h3>
-          <hr className="w-24 h-1 my-1 bg-green-800 border-0 rounded" />
-
+          <TitleWithDivider text="Arbr'O Grimpeur en action" />
           {/* IMAGES */}
           <div className="flex flex-col sm:flex-row flex-wrap my-8">
             <div className="relative flex flex-col sm:w-1/3 p-2">
