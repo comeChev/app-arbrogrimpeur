@@ -7,8 +7,8 @@ import debroussaillage from "../assets/images/static/Démontage_de_cèdre.webp";
 import abattage from "../assets/images/static/abattage.webp";
 import profile from "../assets/images/static/profile.webp";
 import security from "../assets/images/static/Demontage-de-charpentiere-avec-retention.webp";
-import ecoResponsability from "../assets/images/static/Eco_responsability.jpg";
-import satisfaction from "../assets/images/static/Satisfaction-client.jpg";
+import ecoResponsability from "../assets/images/static/EcoResponsability.jpg";
+import satisfaction from "../assets/images/static/SatisfactionClient.jpg";
 //components
 import ContactButton from "../components/ui/buttons/ContactButton";
 import IconTree from "../components/ui/icons/IconTree";
