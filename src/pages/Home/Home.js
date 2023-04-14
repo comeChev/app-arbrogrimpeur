@@ -18,7 +18,6 @@ import IconCheck from "../../components/ui/icons/IconCheck";
 import IconSafe from "../../components/ui/icons/IconSafe";
 import IconEcology from "../../components/ui/icons/IconEcology";
 import IconThumbUp from "../../components/ui/icons/IconThumbUp";
-import IconArrowDown from "../../components/ui/icons/IconArrowDown";
 import MainTitle from "../../components/ui/titles/MainTitle";
 import SecondaryTitle from "../../components/ui/titles/SecondaryTitle";
 import Container from "../../components/ui/Container";
