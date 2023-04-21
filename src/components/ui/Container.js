@@ -5,7 +5,7 @@ const Container = (props) => {
   return (
     <AnimatePresence mode="popLayout">
       <motion.section
-        className={`bg-emerald-100/80 lg:w-4/5 lg:mx-auto pt-10 pb-4 px-4 lg:px-8 sm:shadow-lg my-8 `}
+        className={`bg-emerald-100/80 lg:w-4/5 lg:mx-auto pt-10 pb-4 px-4 lg:px-8 sm:shadow-lg my-8 ${props.cssContainer}`}
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.8 }}

@@ -129,7 +129,7 @@ const Home = () => {
         </div>
         {/* PRESENTATION */}
 
-        <Container css="bg-white">
+        <Container cssContainer="bg-white">
           <div className="relative lg:w-1/2">
             <div className="top-0 pt-16 pb-16 lg:sticky">
               <div>
