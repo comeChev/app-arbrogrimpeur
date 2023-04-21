@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 //images
 import mainImage from "../../assets/images/static/Escalade.webp";
 import elagage from "../../assets/images/static/elagage.webp";
@@ -26,34 +27,48 @@ import CardPrincipes from "./CardPrincipes";
 import TitleWithDivider from "../../components/ui/titles/TitleWithDivider";
 import IconCaretDown from "../../components/ui/icons/IconCaretDown";
 
-const Banner = () => (
-  <div className="absolute top-0 w-full h-full text-teal-50">
-    <div className="absolute bottom-16 w-full">
-      <div className="opacity-0 w-full sm:opacity-100 sm:w-2/3 mx-auto flex items-end justify-between p-4 bg-neutral-950/80 sm:bg-neutral-950/80 hover:opacity-100 rounded-lg shadow-md">
-        <div className="flex flex-col items-start justify-center sm:w-2/3">
-          <h2 className="text-lg lg:text-4xl uppercase font-bold p-1">
-            Elageur, grimpeur, cordiste
-          </h2>
-          <h2 className="text-md lg:text-3xl p-1">Certifié et qualifié</h2>
-          <h2 className="text-sm lg:text-xl p-1">15 années d'expérience</h2>
+const Banner = ({ isVisible }) => (
+  <AnimatePresence>
+    {isVisible && (
+      <motion.div
+        className="absolute top-0 w-full h-full text-teal-50"
+        initial={{ left: "-2000px", opacity: 0 }}
+        animate={{ left: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        exit={{ left: "-2000px", opacity: 0 }}
+      >
+        <div className="absolute bottom-16 w-full">
+          <div className="opacity-0 w-full sm:opacity-100 sm:w-2/3 mx-auto flex items-end justify-between p-4 bg-neutral-950/80 sm:bg-neutral-950/80 hover:opacity-100 rounded-lg shadow-md">
+            <div className="flex flex-col items-start justify-center sm:w-2/3">
+              <h2 className="text-lg lg:text-4xl uppercase font-bold p-1">
+                Elageur, grimpeur, cordiste
+              </h2>
+              <h2 className="text-md lg:text-3xl p-1">Certifié et qualifié</h2>
+              <h2 className="text-sm lg:text-xl p-1">15 années d'expérience</h2>
+            </div>
+            <div className="flex justify-end text-end">
+              <Link
+                className="hidden sm:block px-4 py-2 bg-green-800 rounded-md hover:bg-green-900 border-green-800 border-2 shadow-lg"
+                to="/about"
+              >
+                Plus d'infos →
+              </Link>
+            </div>
+          </div>
         </div>
-        <div className="flex justify-end text-end">
-          <Link
-            className="hidden sm:block px-4 py-2 bg-green-800 rounded-md hover:bg-green-900 border-green-800 border-2 shadow-lg"
-            to="/about"
-          >
-            Plus d'infos →
-          </Link>
-        </div>
-      </div>
-    </div>
-  </div>
+      </motion.div>
+    )}
+  </AnimatePresence>
 );
 
 const Home = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 769);
+  const [isVisible, setIsVisible] = useState(false);
   window.addEventListener("resize", () => {
     setIsMobile(window.innerWidth < 768);
+  });
+  window.addEventListener("scroll", () => {
+    setIsVisible(window.scrollY > 100);
   });
 
   const services = [
@@ -110,7 +125,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          {!isMobile ? <Banner /> : null}
+          {!isMobile ? <Banner isVisible={isVisible} /> : null}
         </div>
         {/* PRESENTATION */}
 
@@ -187,7 +202,7 @@ const Home = () => {
               </div>
               <img
                 src={profile}
-                className="mb-4 mx-4 md:ms-10 md:me-0 md:mb-0 rounded-lg shadow-lg "
+                className="mb-4 mx-4 md:ms-10 md:me-0 md:mb-0 rounded-lg shadow-lg object-cover "
                 alt="A propos d'Arbr'O Grimpeur"
                 height={isMobile ? 200 : 600}
                 width={isMobile ? 200 : 300}

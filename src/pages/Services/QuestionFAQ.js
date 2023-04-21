@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import IconCaretDown from "../../components/ui/icons/IconCaretDown";
 import IconCaretUp from "../../components/ui/icons/IconCaretUp";
+import { motion } from "framer-motion";
 
 const QuestionFAQ = ({ item }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,13 +18,19 @@ const QuestionFAQ = ({ item }) => {
         <span>{isOpen ? <IconCaretUp /> : <IconCaretDown />}</span>
       </div>
       {isOpen && (
-        <div className="px-4 pt-2 text-base text-left text-gray-500 rounded pb-4 bg-neutral-200 shadow-sm">
+        <motion.div
+          initial={{ opacity: 0, translateY: -20 }}
+          animate={{ opacity: 1, translateY: 0 }}
+          exit={{ opacity: 0, translateY: -20 }}
+          transition={{ type: "tween" }}
+          className="px-4 pt-2 text-base text-left text-gray-500 rounded pb-4 bg-neutral-200 shadow-sm"
+        >
           {item.answer.map((i, index) => (
             <p className="py-1" key={index}>
               {i}
             </p>
           ))}
-        </div>
+        </motion.div>
       )}
     </li>
   );

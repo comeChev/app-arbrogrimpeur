@@ -108,7 +108,6 @@ const DynamicIcon = ({ id }) => {
 };
 
 const Services = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
   const { nameService } = useParams();
 
   const searchService = (name) => {
@@ -131,6 +130,9 @@ const Services = () => {
   useEffect(() => {
     setService(searchService(nameService));
   }, [nameService]);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <>
@@ -147,6 +149,7 @@ const Services = () => {
               <li key={index} className="flex">
                 <Link
                   to={`/services/${item.id}`}
+                  onClick={() => setService(null)}
                   className={`${
                     nameService === item.id
                       ? "bg-white text-teal-600"

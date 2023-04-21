@@ -61,7 +61,7 @@ const Navbar = () => {
       <div className="hidden absolute -bottom-14 w-full sm:flex sm:items-center sm:justify-center py-10 z-40 bg-white rounded-md shadow-lg">
         {/* MAIN MENU  */}
         <nav className="sm:ml-6 flex flex-shrink-0 items-center">
-          <ul className="space-x-8 flex list-none">
+          <ul className="flex list-none">
             {menu.map((link, index) => (
               <LinkButton key={index} to={link.to} text={link.name} />
             ))}

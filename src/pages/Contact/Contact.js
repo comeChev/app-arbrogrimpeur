@@ -78,9 +78,9 @@ const Contact = () => {
 
   return (
     <>
-      <Container css="flex">
+      <Container css="md:flex">
         {!isMobile ? (
-          <div className="flex flex-col items-center justify-center py8 lg:py-16">
+          <div className="flex flex-col items-center justify-center py-8 lg:py-16">
             <ContactDetails css="py-4" />
           </div>
         ) : null}
