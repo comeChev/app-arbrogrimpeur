@@ -42,7 +42,7 @@ const ModalPlace = ({ setIsOpen }) => {
                   setIsOpen(false);
                 }}
                 to="/contact"
-                class="my-3 px-1 md:px-4 mx-2 py-2 bg-teal-800 text-white border border-2 border-teal-800 text-xs md:text-sm font-medium rounded-full w-full shadow-sm hover:bg-transparent hover:text-teal-800 transition duration-300"
+                class="my-3 px-1 md:px-4 mx-2 py-2 bg-teal-800 text-white border-2 border-teal-800 text-xs md:text-sm font-medium rounded-full w-full shadow-sm hover:bg-transparent hover:text-teal-800 transition duration-300"
               >
                 Contactez-nous
               </Link>
@@ -50,7 +50,7 @@ const ModalPlace = ({ setIsOpen }) => {
                 onClick={() => {
                   setIsOpen(false);
                 }}
-                class="my-3 px-1 md:px-4 mx-2 py-2 bg-red-600 text-white border border-2 border-red-600 text-xs md:text-sm font-medium rounded-full w-full shadow-sm hover:bg-transparent hover:text-red-600 transition duration-300"
+                class="my-3 px-1 md:px-4 mx-2 py-2 bg-red-600 text-white border-2 border-red-600 text-xs md:text-sm font-medium rounded-full w-full shadow-sm hover:bg-transparent hover:text-red-600 transition duration-300"
               >
                 Fermer
               </button>

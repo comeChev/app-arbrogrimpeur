@@ -168,7 +168,7 @@ const Home = () => {
 
         <ContactButton />
 
-        <Container css="bg-white">
+        <Container cssContainer="bg-white">
           <div>
             <TitleWithDivider text="Arbr'O Grimpeur ? Quésaco ?" />
 
@@ -211,7 +211,7 @@ const Home = () => {
           </div>
         </Container>
 
-        <Container css="bg-white">
+        <Container cssContainer="bg-white">
           <div>
             <TitleWithDivider text=" Pourquoi choisir Arbr'O Grimpeur pour vos travaux ?" />
             <div className="flex flex-col mt-10">
